@@ -15,7 +15,7 @@ class CreateNgistMastLelangTable extends Migration
     {
         Schema::create('ngist_mast_lelang', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_perusahaan');
+            $table->string('nama_lelang');
             $table->string('tgl_mulai');
             $table->string('tgl_akhir');
             $table->string('desc');

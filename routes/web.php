@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/manlelang', 'Admin\AdminController@manlelang')->name('manlelang');
+Route::post('/manlelang_store', 'Admin\AdminController@store');
