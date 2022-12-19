@@ -325,8 +325,8 @@
                             <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Manajemen Lelang</span></a>
 
                             <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                                {{-- <li class="nav-item"><a href="/user" class="nav-link">Data User</a></li>
-                                <li class="nav-item"><a href="/produk" class="nav-link">Data Produk</a></li>
+                                <li class="nav-item"><a href="/manlelang" class="nav-link">Manajemen Lelang</a></li>
+                                {{-- <li class="nav-item"><a href="/produk" class="nav-link">Data Produk</a></li>
                                 <li class="nav-item"><a href="/kategori" class="nav-link">Data Kategori Produk</a></li>
                                 <li class="nav-item"><a href="/stok_barang" class="nav-link">Data Ketersediaan Produk</a></li> --}}
                             </ul>
