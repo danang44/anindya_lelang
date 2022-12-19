@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Admin.layouts_admin.app')
 
 @section('content')
 <div class="container">
@@ -21,3 +21,5 @@
     </div>
 </div>
 @endsection
+
+
