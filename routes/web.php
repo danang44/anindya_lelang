@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/manlelang', 'Admin\AdminController@manlelang')->name('manlelang');
 Route::post('/manlelang_store', 'Admin\AdminController@store');
+
+Route::get('/user_lelang', 'Admin\AdminController@user_lelang')->name('user_lelang');
+Route::post('/userlelang_store', 'Admin\AdminController@userlelang_store');
