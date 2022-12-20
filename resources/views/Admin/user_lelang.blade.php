@@ -3,7 +3,6 @@
 @section('content')
 
 
-
 <style>
     label {
         color: black !important;
@@ -47,24 +46,24 @@
                                 <thead>
                                     <tr class="text-center">
                                     
-                                        <th>Nama Lelang</th>
-                                        <th>Tanggal Mulai</th>
-                                        <th>Tanggal Selesai</th>
-                                        <th>Deskripsi</th>
-                                        <th>Scope</th>
-                                        <th>Harga</th>
+                                        <th>Nama perusahaan</th>
+                                        <th>Email</th>
+                                        <th>Alamat</th>
+                                        <th>Telp</th>
+                                        <th>No NIB</th>
+                                      
                                         <th class="col-3s text-center">Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($mast_lelang as $i)
+                                    @foreach($user_lelang as $i )
                                     <tr>
-                                        <td class="pr-2 pl-2 ">{{$i->nama_lelang}}</td>
-                                        <td class="pr-2 pl-2 ">{{$i->tgl_mulai}}</td>
-                                        <td class="pr-2 pl-2 ">{{$i->tgl_akhir}}</td>
-                                        <td class="pr-2 pl-2 ">{{$i->desc}}</td>
-                                        <td class="pr-2 pl-2 ">{{$i->scope}}</td>
-                                        <td class="pr-2 pl-2 ">{{$i->harga}}</td>
+                                        <td class="pr-2 pl-2 ">{{$i->nama_perusahaan}}</td>
+                                        <td class="pr-2 pl-2 ">{{$i->email}}</td>
+                                        <td class="pr-2 pl-2 ">{{$i->alamat}}</td>
+                                        <td class="pr-2 pl-2 ">{{$i->telp}}</td>
+                                        <td class="pr-2 pl-2 ">{{$i->no_nib}}</td>
+                                       
                                         <td class="text-center">
                                             <button class="btn btn-outline-info editbtn" value="{{$i->id}}"><i class="fa-solid fa-pen"></i></button>
                                             <button class="btn btn-outline-danger deletebtn" value="{{$i->id}}"><i class="fa-solid fa-trash"></i></button>
@@ -193,37 +192,32 @@
             </div>
 
             <div class="modal-body">
-                <form action="/manlelang_store" method="POST" enctype="multipart/form-data">
+                <form action="/userlelang_store" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" id="id" name="id"> <br />
-                    <input type="hidden" id="created_by" name="created_by" value="{{Auth::id()}}">
+                    <input type="hidden" id="id_user" name="id_user" value="{{Auth::id()}}"> <br />
+                  
+                  
 
                     <div class="form-group">
-                        <label>Nama Lelang</label>
-                        <input type="text" required="required" class="form-control" name="nama_lelang" id="nama_lelang">
+                        <label>Email</label>
+                        <input type="text" class="form-control" required="required" name="email" id="email" value="{{Auth::user()->email}}" readonly>
                     </div>
                     <div class="form-group">
-                        <label>Tanggal Mulai</label>
-                        <input type="date" required="required" class="form-control" name="tgl_mulai" id="tgl_mulai">
+                        <label>Nama Perusahaan</label>
+                        <input type="text" required="required" class="form-control" name="nama_perusahaan" id="nama_perusahaan">
                     </div>
                     <div class="form-group">
-                        <label>Tanggal Selesai</label>
-                        <input type="date" required="required" class="form-control" name="tgl_akhir" id="tgl_akhir">
+                        <label>Alamat</label>
+                        <input type="text" required="required" class="form-control" name="alamat" id="alamat">
                     </div>
                     <div class="form-group">
-                        <label>Deskripsi</label>
-                            <textarea name="desc" required="required" class="form-control" id="desc" cols="30" rows="10"
-                                value="text" required autocomplete="desc"></textarea>
-                            
+                        <label>Telp</label>
+                        <input type="text" required="required" class="form-control" name="telp" id="telp">
                     </div>
                     <div class="form-group">
-                        <label>Scope</label>
-                            <textarea name="scope" required="required" class="form-control" id="scope" cols="30" rows="10"
-                                value="text" required autocomplete="scope"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Harga</label>
-                        <input type="text" required="required" class="form-control" name="harga" id="harga">
+                        <label>No NIB</label>
+                        <input type="text" required="required" class="form-control" name="no_nib" id="no_nib">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Batal</button>
@@ -235,12 +229,12 @@
     </div>
 </div>
 
-<script>   
+{{-- <script>   
 var desc = document.getElementById("desc"); 
     CKEDITOR.replace(desc);
     CKEDITOR.replace('scope');
     CKEDITOR.config.autoParagraph = false;
    
-</script>
+</script> --}}
 
 @endsection
