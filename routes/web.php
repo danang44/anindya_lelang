@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/manlelang', 'Admin\AdminController@manlelang')->name('manlelang');
 Route::post('/manlelang_store', 'Admin\AdminController@store');
+
+// google route
+Route::get('/auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('/auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
