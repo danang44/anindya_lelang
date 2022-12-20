@@ -28,3 +28,5 @@ Route::post('/manlelang_store', 'Admin\AdminController@store');
 // google route
 Route::get('/auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('/auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('/user_lelang', 'Admin\AdminController@user_lelang')->name('user_lelang');
+Route::post('/userlelang_store', 'Admin\AdminController@userlelang_store');
